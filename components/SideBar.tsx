@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { api } from "~/utils/api";
 import useDebounceValue from "~/utils/useDebounceValue";
 import * as Collapsible from "@radix-ui/react-collapsible";
+import Link from "next/link";
 
 interface IBook {
   id: string;
@@ -66,7 +67,12 @@ function SideBar() {
                 key={index}
                 className="m-2 h-40 w-full rounded bg-slate-100 p-4"
               >
-                <h1 className="font-bold">{value.volumeInfo.title}</h1>
+                <Link
+                  className="font-bold"
+                  href={`books/${value.volumeInfo.title}`}
+                >
+                  {value.volumeInfo.title}
+                </Link>
                 <p>{value.volumeInfo.subtitle}</p>
                 <button
                   type="button"

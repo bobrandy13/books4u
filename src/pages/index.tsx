@@ -8,7 +8,7 @@ import SideBar from "components/SideBar";
 
 export default function Home() {
   // const books = api.books.listBooks.useQuery("potato");
-  // return <SideBar />;
+  return <SideBar />;
 }
 
 // function AuthShowcase() {
