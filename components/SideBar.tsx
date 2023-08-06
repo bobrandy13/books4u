@@ -13,6 +13,10 @@ interface IBook {
     subtitle: string;
     authors: [];
     description: string;
+    // industryIdentifiers: {
+    //   identifer: string;
+    //   type: string;
+    // }[];
   };
 }
 interface IResponseData {
@@ -55,22 +59,19 @@ function SideBar() {
           className="m-4 w-72 rounded p-4"
           onChange={(e) => {
             setBookName(e.target.value);
-            onChange(e);
+            // onchange(e);
           }}
           value={bookName}
         />
         {isOK &&
           bookData?.items?.map((value: IBook, index) => {
-            console.log(value.volumeInfo.title);
+            console.log(value.volumeInfo);
             return (
               <div
                 key={index}
                 className="m-2 h-40 w-full rounded bg-slate-100 p-4"
               >
-                <Link
-                  className="font-bold"
-                  href={`books/${value.volumeInfo.title}`}
-                >
+                <Link className="font-bold" href={`books/${value.id}`}>
                   {value.volumeInfo.title}
                 </Link>
                 <p>{value.volumeInfo.subtitle}</p>
