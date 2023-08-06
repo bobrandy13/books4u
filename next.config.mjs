@@ -21,6 +21,9 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ["books.google.com"],
+  },
 };
 
 export default config;
